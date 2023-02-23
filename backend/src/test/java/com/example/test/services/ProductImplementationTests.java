@@ -4,7 +4,6 @@ import com.example.test.entites.Products;
 import com.example.test.service.ProductImplementation;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -15,10 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 public class ProductImplementationTests {
 
-    @Autowired
-    private ProductImplementation;
 
+    final private ProductImplementation productImplementation;
 
+    public ProductImplementationTests(ProductImplementation productImplementation) {
+        this.productImplementation = productImplementation;
+    }
 
 
     @Test

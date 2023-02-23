@@ -33,7 +33,7 @@ public class ProductImplementation implements IProductService {
     }
 
     @Override
-    public void saveProduct(Products product) {
+    public Products saveProduct(Products product) {
         Products prod = productRepositories.findByName(product.getName());
         if (prod == null) {
             product.setId(UUID.randomUUID().toString().split("-")[0]);
@@ -41,6 +41,7 @@ public class ProductImplementation implements IProductService {
         }
         else throw new IllegalArgumentException("Le produits existe deja ");
 
+        return prod;
     }
 
     @Override
